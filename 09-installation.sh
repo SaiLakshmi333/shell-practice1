@@ -1,16 +1,13 @@
 #!/bin/bash
-userid=$(id -u)
-if [ $userid -ne 0 ];
-then
-echo "Please enter with root acess"
+userid=(id -u)
+if [ userid -ne 0 ];then
+echo "Please enter with root access"
 exit 1
 fi
 echo "installing nginx"
-dnf install nginxxx -y
-if [ $? -ne 0 ];
-then
-echo " installing nginx failuer"
-exit 1
+dnf install nginx -y
+if [ $? ne 0 ];then
+echo "Installation failed"
 else
-echo "installed successfully"
+echo "Installation success"
 fi
