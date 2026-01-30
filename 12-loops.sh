@@ -13,6 +13,7 @@ validate() {
     exit 1
     else 
     echo "$2 is success" | tee -a $log_file
+    fi
 }
 
 for $package in $@
