@@ -7,7 +7,7 @@ exit 1
 fi
 echo "installing nginx"
 dnf install nginxxx -y
-if [$? -ne 0];
+if [ $? -ne 0 ];
 then
 echo " installing nginx failuer"
 exit 1
