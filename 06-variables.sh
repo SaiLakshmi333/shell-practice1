@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "all args passed to the script : $@"
+echo "number of args passed to the script : $#"
+echo "script name : $0"
+echo "present working directory : $pwd"
+echo "user data : $user"
+echo "home user : $home"
+echo "pid :$pid"
+echo "background process : $!"
+echo "all args passed :$*"
