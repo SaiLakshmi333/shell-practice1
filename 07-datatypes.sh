@@ -2,4 +2,4 @@
 a=1
 b=2
 sum=($a+$b)
-total is : $sum
+echo "total is : $sum"
