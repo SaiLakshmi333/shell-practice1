@@ -1,25 +1,21 @@
 #!/bin/bash
 userid=$(id -u)
-logs_folder="/var/log/shell_script/"
-logs_file="/var/log/shell_script/$0.log"
-
-
-if [ $userid -ne 0 ]; then
+log_folder="/var/log/shell_script"
+log_file="/var/log/shell_script/$0.logfile"
+if [ $userid -ne 0 ];then
 echo "Please enter with root access"
 exit 1
 fi
-
-mkdir -p $logs_folder
+mkdir -p $log_folder
 validate(){
     if [ $1 -ne 0 ];then
-    echo "$2 is failed" | tee -a $logs_file
-    exit 1
-    echo "$2 is success" | tee -a $logs_file
-    fi
+    echo "$2 is failed" | tee -a $log_file
+    else
+    echo "$2 is success" | tee -a $log_file
 }
 
-dnf install nginx -y  &>> $logs_file
-validate $? "nginx installed" 
+dnf install nginx -y  &>> $log_file
+validate $? "nginx installed"
 
-dnf install mysql -y &>> $logs_file
+dnf install mysql -y &>> $log_file
 validate $? "mysql installed"
