@@ -6,7 +6,7 @@ echo "Please enter with root acess"
 exit 1
 fi
 echo "installing nginx"
-dnf install nginx -y
+dnf install nginxxx -y
 if [$? -ne 0];
 then
 echo " installing nginx failuer"
