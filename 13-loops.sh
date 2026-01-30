@@ -19,8 +19,8 @@ validate() {
 for package in $@
 do 
 dnf list installed $package &>> $log_file
-if [ $1 -ne 0 ]; then
-echo "$2 not installed ...installing now"
+if [ $? -ne 0 ]; then
+echo "$package not installed ...installing now"
 dnf install $package -y &>>$log_file
 validate $? "$package installation"
 else
