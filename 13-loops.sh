@@ -26,6 +26,5 @@ validate $? "$package installation"
 else
 echo "$package already installed" &>> $log_file
 fi
-
 done 
 
