@@ -10,7 +10,7 @@ exit 1
 fi
 
 validate(){
-    if [ $1 -ne 0 ]; then
+    if [ $1 -ne 0 ];then
     echo "$2 is failed" | tee -a $logs_file
     exit 1
     echo "$2 is success" | tee -a $logs_file
@@ -18,7 +18,7 @@ validate(){
 }
 
 dnf install nginx -y  &>>$logs_file
-validate $1 "nginx installed" 
+validate $? "nginx installed" 
 
 dnf install mysql -y &>>$logs_file
-validate $1 "mysql installed"
+validate $? "mysql installed"
