@@ -1,5 +1,5 @@
 #!/bin/bash
-log_dir="/home/ec2-user/app-logs"
+log_dir=/home/ec2-user/app-logs
 log_file="$log_dir/$0.log"
 
 if[ ! -d $log_dir ]; then
