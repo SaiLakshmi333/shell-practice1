@@ -7,5 +7,5 @@ echo "log directory not exist"
 exit 1
 fi
 
-files_to_delete=$(find . -name "*.log" -type f -mtime +14)
+files_to_delete=$(find $log_dir -name "*.log" -type f -mtime +14)
 echo "$files_to_delete"
