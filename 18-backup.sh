@@ -46,7 +46,7 @@ log "Source directory  : $source_dir"
 log "Destination Directory : $dest_dir" 
 log "days : $days" 
 
-if [ -z "{$find_files}"];then
+if [ -z "${find_files}"];then
 log "no files present to archive"
 else
 log "files found to archive :$find_files"
