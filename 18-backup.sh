@@ -15,9 +15,10 @@ echo -e "$R please access with root user $N"
 exit 1
 fi
 
+mkdir -p $log_dir
 usage(){
- echo -e  "$R USAGE :: sudo backup <source_dir> <dest_dir> <days>[default 14 days]$N" 
- 
+ log "$R USAGE :: sudo backup <source_dir> <dest_dir> <days>[default 14 days]$N" 
+ exit 1
 }
 
 log(){
