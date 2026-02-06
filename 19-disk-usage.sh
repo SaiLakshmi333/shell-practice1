@@ -9,7 +9,7 @@ B="\e[34m"
 N="\e[0m" 
 Message=""
 
-disk_usage=$(df -hT grep -v $Filesystem | awk '{print $6}' -f | cut -d "%" -f1)
+disk_usage=$(df -hT grep -v Filesystem )
 disk_threshold=3
 
 while IFS= read -r line
