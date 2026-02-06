@@ -69,7 +69,6 @@ echo "deleting the file : $filepath"
 rm -f $filepath
 log "deleted the file :$filepath"
 done <<< $find_files  
-
 else
 log "Archival is failed"
 exit 1
