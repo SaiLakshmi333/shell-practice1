@@ -62,7 +62,7 @@ while IFS= read -r filepath; do
 echo "deleting the file : $filepath"
 rm -f $filepath
 echo "deleted the file :$filepath"
-done <<< $files_to_delete   
+done <<< $find_files  
 
 else
 echo "Archival is failed"
