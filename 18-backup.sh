@@ -9,7 +9,7 @@ B="\e[34m"
 N="\e[0m" 
 source_dir=$1
 dest_dir=$2
-days=$3(3:- 14)
+days=${3:-14}
 if [ $user_id -ne 0 ];then
 echo -e "$R please access with root user $N"
 exit 1
