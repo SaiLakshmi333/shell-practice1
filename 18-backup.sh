@@ -11,16 +11,16 @@ source_dir=$1
 dest_dir=$2
 days=${3:-14}
 if [ $user_id -ne 0 ];then
-echo -e "$R please access with root user $N"  | tee -a $log_file
+echo -e "$R please access with root user $N"  
 exit 1
 fi
 
 usage(){
- echo -e  "$R USAGE :: sudo backup <source_dir> <dest_dir> <days>[default 14 days]$N" | tee -a $log_file
+ echo -e  "$R USAGE :: sudo backup <source_dir> <dest_dir> <days>[default 14 days]$N" 
 }
 
 log(){
-    echo -e "$(date "+%Y-%m-%d %H-%M-%s")| $1 " | tee -a $log_file
+    echo -e "$(date "+%Y-%m-%d %H-%M-%s")| $1 " 
 }
 
 if [ $# -lt 2 ];then
