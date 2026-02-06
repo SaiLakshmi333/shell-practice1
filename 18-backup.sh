@@ -31,18 +31,18 @@ exit 1
 fi
 
 if [ ! -d $source_dir ];then
-echo "source directory not exist" 
+log "source directory not exist" 
 exit 1
 fi
 
 if [ ! -d $dest_dir ];then
-echo "destination directory" 
+log "destination directory" 
 exit 1
 fi
 
 # find files
 
-find_files=$(find $source_dir -name "*.log" -type f -mtime +$days) 
+find_files=$(find "$source_dir" -name "*.log" -type f -mtime +$days) 
 
 log "backup started"
 log "Source directory  : $source_dir" 
@@ -59,16 +59,20 @@ echo "Archive name:$zip_file"
 tar -zcvf $zip_file $(find $source_dir -name "*.log" -type f -mtime +$days)
 fi
 
+#check archive success or not
+
 if [ -f $zip_file ];then
-echo "Archival is success"
+log "Archival is success"
 while IFS= read -r filepath; do 
+# process each line 
 echo "deleting the file : $filepath"
 rm -f $filepath
-echo "deleted the file :$filepath"
+log "deleted the file :$filepath"
 done <<< $find_files  
 
 else
-echo "Archival is failed"
+log "Archival is failed"
 exit 1
+fi
 fi
 
