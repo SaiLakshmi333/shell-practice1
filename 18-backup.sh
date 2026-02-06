@@ -22,12 +22,12 @@ if [ $# -lt 2 ];then
 usage 
 fi
 
-if [ ! -d source_dir ];then
+if [ ! -d $source_dir ];then
 echo "source directory not exist"
 exit 1
 fi
 
-if [ ! -d dest_dir ];then
+if [ ! -d $dest_dir ];then
 echo "destination directory"
 exit 1
 fi
