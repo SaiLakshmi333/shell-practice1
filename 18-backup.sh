@@ -39,7 +39,7 @@ fi
 
 # find files
 
-find_files=$(find $source_dir -name "*.log" -type f -mtype +$days)
+find_files=$(find $source_dir -name "*.log" -type f -mtime +$days)
 
 log "Source directory copied : $source_dir"
 log "Destination Directory : $dest_dir"
