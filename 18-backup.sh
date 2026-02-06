@@ -1,6 +1,6 @@
 #!/bin/bash
 user_id=$(id -u)
-log_dir="/var/log/shell_script/"
+log_dir="/var/log/shell_script"
 log_file="$log_dir/backup.log"
 R="\e[31m"
 G="\e[32m"
