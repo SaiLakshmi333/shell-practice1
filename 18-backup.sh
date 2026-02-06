@@ -53,6 +53,7 @@ log "files found to archive :$find_files"
 time_stamp=$(date +%F-%H-%M-%S)
 zip_file="$dest_dir/app-logs-$time_stamp.tar.gz"
 echo "Archive name:$zip_file"
+tar -zcvf $zip_file $(find $source_dir -name "*.log" -type f -mtime +$days)
 fi
 
 if [ -f $zip_file ];then
@@ -61,7 +62,7 @@ while IFS= read -r filepath; do
 echo "deleting the file : $filepath"
 rm -f $filepath
 echo "deleted the file :$filepath"
-done <<< $files_to_delete
+done <<< $files_to_delete   
 
 else
 echo "Archival is failed"
