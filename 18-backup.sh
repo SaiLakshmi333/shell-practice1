@@ -9,6 +9,7 @@ B="\e[34m"
 N="\e[0m" 
 source_dir=$1
 dest_dir=$2
+days=#3(3 :- 14)
 if [ $user_id -ne 0 ];then
 echo -e "$R please access with root user $N"
 exit 1
@@ -16,6 +17,10 @@ fi
 
 usage(){
  echo -e  "$R USAGE :: sudo backup <source_dir> <dest_dir> <days>[default 14 days]$N"
+}
+
+log(){
+    echo "$(date "+%Y-%m-%d %H-%M-%s")"
 }
 
 if [ $# -lt 2 ];then
@@ -31,5 +36,14 @@ if [ ! -d $dest_dir ];then
 echo "destination directory"
 exit 1
 fi
+
+# find files
+
+find_files=$(find $source_dir -name "*.log" -type f -mtype +$days)
+
+log "Source directory copied : $source_dir"
+log "Destination Directory : $dest_dir"
+log "days : $days"
+
 
 
