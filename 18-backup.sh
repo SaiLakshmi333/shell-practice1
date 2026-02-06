@@ -46,5 +46,13 @@ log "Source directory  : $source_dir" | tee -a $log_file
 log "Destination Directory : $dest_dir" | tee -a $log_file
 log "days : $days" | tee -a $log_file
 
+if [ -z "{$find_files}"];then
+log "no files present to archive"
+else
+log "files found to archive :$find_files"
+time_stamp=$(date +%F-%H-%M-%S)
+zip_file="$dest_dir/app-logs-$time_stamp.tar.gz"
+echo "Archive name:$zip_file"
+
 
 
