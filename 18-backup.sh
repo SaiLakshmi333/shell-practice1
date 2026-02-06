@@ -28,23 +28,23 @@ usage
 fi
 
 if [ ! -d $source_dir ];then
-echo "source directory not exist" | tee -a $log_file
+echo "source directory not exist" 
 exit 1
 fi
 
 if [ ! -d $dest_dir ];then
-echo "destination directory" | tee -a $log_file
+echo "destination directory" 
 exit 1
 fi
 
 # find files
 
-find_files=$(find $source_dir -name "*.log" -type f -mtime +$days) | tee -a $log_file
+find_files=$(find $source_dir -name "*.log" -type f -mtime +$days) 
 
-log "backup started" | tee -a $log_file
-log "Source directory  : $source_dir" | tee -a $log_file
-log "Destination Directory : $dest_dir" | tee -a $log_file
-log "days : $days" | tee -a $log_file
+log "backup started"
+log "Source directory  : $source_dir" 
+log "Destination Directory : $dest_dir" 
+log "days : $days" 
 
 if [ -z "{$find_files}"];then
 log "no files present to archive"
@@ -53,6 +53,6 @@ log "files found to archive :$find_files"
 time_stamp=$(date +%F-%H-%M-%S)
 zip_file="$dest_dir/app-logs-$time_stamp.tar.gz"
 echo "Archive name:$zip_file"
-
+fi
 
 
