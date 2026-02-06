@@ -16,7 +16,7 @@ while IFS= read -r line
 do
 USAGE=$(echo $line| awk '{print $6}'|cut -d "%" -f1)
 PARTITION=$(echo $line | aws '{print $7}')
-if[ $USAGE -gt disk_threshold];then
+if[ $USAGE -gt $disk_threshold];then
 Message+="DISK is Full on $USAGE:$PARTITION" 
 fi
 done <<< $disk_usage
