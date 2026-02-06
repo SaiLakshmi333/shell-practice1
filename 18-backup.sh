@@ -55,4 +55,16 @@ zip_file="$dest_dir/app-logs-$time_stamp.tar.gz"
 echo "Archive name:$zip_file"
 fi
 
+if [ -f $zip_file ];then
+echo "Archival is success"
+while IFS= read -r filepath; do 
+echo "deleting the file : $filepath"
+rm -f $filepath
+echo "deleted the file :$filepath"
+done <<< $files_to_delete
+
+else
+echo "Archival is failed"
+exit 1
+fi
 
