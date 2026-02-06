@@ -74,5 +74,5 @@ else
 log "Archival is failed"
 exit 1
 fi
-fi
+
 
