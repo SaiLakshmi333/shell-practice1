@@ -22,3 +22,5 @@ fi
 done <<< $disk_usage
 
 echo -e "$Message"
+
+sh 20-mailalert.sh "gunturusai929@gmail.com" "Disk_Utilization on $Server_IP" "$Message "DevOps Team" 
