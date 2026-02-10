@@ -16,8 +16,7 @@ USAGE=$(echo $line | awk '{print $6}'| cut -d "%" -f1)
 PARTITION=$(echo $line | awk '{print $7}')
 
 if [ "$USAGE" -ge "$disk_threshold" ]; then
-
-Message+="DISK is Full on $USAGE:$PARTITION  <br>"
+Message+="DISK is Full on $USAGE:$PARTITION <br>"
 fi
 
 done <<< $disk_usage
